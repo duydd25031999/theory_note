@@ -78,6 +78,7 @@ Secure cookie
 
 ## SSL (secure socket layer)
 ![SSL](SSL.png)
+
 1. client yêu cầu kết nối TLS / khởi tạo SSL tới server
 1. server response `encrypted public key` & `certificate`
 1. client dùng thuật toán để check certificate hợp lệ
