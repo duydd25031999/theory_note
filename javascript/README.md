@@ -518,3 +518,65 @@ hasOwnProperty
 # Template 
     obj.hasOwnProperty('nameOfProperty) // return boolean
 ```
+
+# 16. Promise
+`Promise` là 1 object bao gồm trạng thái cuối cùng (có thể là lỗi) của một method không đồng bộ và kết quả của method đó.
+- `Promise` là proxy for a value không cần biết khi khởi tạo, liên kết các quá trình sử lý không đồng nhất để trả về success value or failure reason. 
+- This lets asynchronous methods return values like synchronous methods.
+    - Instead of immediately returning the final value, the asynchronous method returns a `Promise` to supply the value at some point in the future.
+- `Callback` là một đoạn mã thực thi đại diện cho một asynchronous method được truyền như một paramester vào một method sẽ được thực hiện để có thể gọi lại call asynchronous method back. Quá trình này kéo dài tới khi asynchronous method dừng.
+
+Constructor của Promise dùng để wrap method chưa hỗ trợ promise.
+```
+new Promise( function executor (resolve, reject) {...} );
+```
+- Function truyền vào Promise là executor. Function này được executed trước cả Promise constructor.
+- The executor normally initiates some asynchronous work for main function, and then, once that completes, it will call resolve or reject.
+- `resolve` và `reject` là các function sẽ được gọi tương ứng với trạng thái của main function.
+    - `resolve` resolve the promise when main function run successfully.
+    - `reject` returning value if error occurred. If an error is thrown in the executor function, the promise is rejected. The return value of the executor is ignored.
+
+Promise có 3 states
+- *pending*: initial state, neither fulfilled nor rejected.
+- *fulfilled*: meaning that the operation completed successfully.
+- *rejected*: meaning that the operation failed.
+![PromiseState](PromiseState.png)
+
+## `Promise.then`
+The `then()` method returns a `Promise`. 
+- It takes up to two arguments: callback functions for the success and failure cases of the `Promise`.
+```
+p.then(
+  (value) => {
+    // sử lý value nếu success
+  }, 
+  (error) => {
+    //sử lý error
+  }
+);
+```
+- Nếu chỉ truyền vào then() 1 function đó tự động là fullfill function, function này chỉ chạy khi Promise is fulfilled.
+- Một khi Promise được xử lý xong(success hoặc error), nó sẽ gọi hàm sử lý (onFulfilled  or onRejected) dưới dạng asynchronous (scheduled in the current thread loop).
+
+Khi handle function : 
+- <ins>returns a value</ins>, the `Promise` returned by `then()` gets resolved with the returned value as its value;
+- <ins>doesn't return anything</ins>, the `Promise` returned by `then()` gets resolved with an `undefined`value;
+- <ins>throws an error</ins>, the `Promise` returned by `then()` gets rejected with the thrown error as its value;
+- <ins>returns an already resolved `Promise`</ins>, the `Promise` returned by `then()` gets resolved with that promise's value as its value;
+- <ins>returns an already rejected `Promise`</ins>, the `Promise` returned by `then()` gets rejected with that promise's value as its value;
+- <ins>returns another pending `Promise` object</ins>, the resolution/rejection of the `Promise` returned by `then()` sẽ truyền cho `Promise` returned by handler. Also, the value of the `Promise` returned by `then()` will be the same as the value of the `Promise` returned by the handler.
+
+## `Promise.catch`
+The `catch()` method returns a `Promise` and deals with rejected cases only.
+```
+mainFunction.catch(function(error) {
+  //Sử lý error
+})
+
+mainFunction.catch(function(error) { ... }) 
+//tương đương với
+mainFunction.then(undifine, function(error) { ... })
+```
+
+## Promise.finally
+The `finally()` method returns a Promise. When the promise is settled, i.e either fulfilled or rejected, the specified callback function is executed. This provides a way for code to be run whether the promise was fulfilled successfully or rejected once the Promise has been dealt with.

@@ -489,3 +489,17 @@ export default {
 
 ## Acitions
 Giống mutation nhưng có thể chạy acsynchronous
+
+# Question
+Các tính năng chính của VueJS là gì?
+- Virtual DOM: Nó sử dụng DOM ảo tương tự như các framework hiện có khác như ReactJS, Ember, v.v. Virtual DOM là một đại diện cây trong bộ nhớ có dung lượng nhẹ của DOM HTML gốc và được cập nhật mà không ảnh hưởng đến DOM gốc.
+- Component: Được sử dụng để tạo các phần tử tùy chỉnh có thể tái sử dụng trong các ứng dụng VueJS.
+- Template: VueJS cung cấp các template dựa trên HTML liên kết DOM với dữ liệu.
+- Định tuyến (routing): Điều hướng giữa các trang được thực hiện thông qua vue-router.
+- Nhẹ (light-weight): VueJS là thư viện có trọng lượng nhẹ so với các framework khác.
+
+Vue instance là gì?
+- Cá thể Vue, thường được gọi là vmtrong ứng dụng Vue là ViewModel của mẫu MVVM mà Vue tuân theo. 
+
+Tại sao khi bind v-for thường phải mapping key
+- Để khi 1 item trong array update thì sẽ tìm và update view tương ứng mà không phải update cả array

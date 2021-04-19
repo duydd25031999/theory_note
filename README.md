@@ -4,6 +4,12 @@
 
 [HTML](html/README.md)
 
-[WEB](web/README.md)
+[Web](web/README.md)
 
 [VueJS](vue/README.md)
+
+[PHP](php/README.md)
+
+[Laravel](laravel/README.md)
+
+[Docker](docker/README.md)
