@@ -18,7 +18,7 @@ $ composer require [name_package]
 ```
 $ composer require laravel/ui --dev
 $ php artisan ui vue
-$ php artisan ui vue --auth
+$ php artisan ui vue --auth     
 ```
 
 # Artisan
@@ -250,6 +250,13 @@ hasAny()
     Factories
         - Là những file để fake data cho model trong database.
         - Từ đó có thể tạo data có sẵn để mockup, test, …
+
+# Laravel-mix
+`npm run dev`
+- Build ra 1 bản js + css trong folder `public`
+
+webpack.mix.js
+- file để webpack có thể merge js + css của folder `public` + `resoureces`
 
 # Question
 Event và Listener là gì? Dùng khi nào? Tại sao dùng? Ví dụ?
