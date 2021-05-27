@@ -491,19 +491,291 @@ export default {
 Giống mutation nhưng có thể chạy acsynchronous
 
 # Question
-Các tính năng chính của VueJS là gì?
+## Các tính năng chính của VueJS là gì?
 1. Virtual DOM: Nó sử dụng DOM ảo tương tự như các framework hiện có khác như ReactJS, Ember, v.v. Virtual DOM là một đại diện cây trong bộ nhớ có dung lượng nhẹ của DOM HTML gốc và được cập nhật mà không ảnh hưởng đến DOM gốc.
 1. Component: Được sử dụng để tạo các phần tử tùy chỉnh có thể tái sử dụng trong các ứng dụng VueJS.
 1. Template: VueJS cung cấp các template dựa trên HTML liên kết DOM với dữ liệu.
 1. Định tuyến (routing): Điều hướng giữa các trang được thực hiện thông qua vue-router.
 1. Nhẹ (light-weight): VueJS là thư viện có trọng lượng nhẹ so với các framework khác.
 
-Vue instance là gì?
-- Cá thể Vue, thường được gọi là vm trong ứng dụng Vue là ViewModel của mẫu MVVM mà Vue tuân theo. 
+## Vue instance là gì?
+Cá thể Vue, thường được gọi là vm trong ứng dụng Vue là ViewModel của mẫu MVVM mà Vue tuân theo. 
 
-Lifecycle methods || Lifecycle hooks của vue là gì
-- Lifecycle hooks là những callback được gọi từng giai đoạn của runtime của vue
-1. Creation: 
+## Lifecycle methods || Lifecycle hooks của vue là gì
+Lifecycle hooks là những callback được gọi từng giai đoạn của runtime của vue
+## 1. Creation (Initialization)
+Init vue instance.
+- Creation hooks thực hiện action trước khi components gán vào DOM.
+- Chỉ mỗi creation hooks có thể chạy ở server side
+1. `beforeCreate`
+Chạy trước khi init component
+- Setup observer cho data
+  - Mới là observer chưa có default value
+- Init events trong component
+```javascript
+  new Vue({
+    data: {
+      count: 10
+    },
+    beforeCreate: function () {
+      console.log('Nothing gets called at this moment')
+      // `this` points to the view model instance
+      console.log('count is ' + this.count);
+    }
+  })
+      // count is undefined
+```
+2. `created`
+Gọi sau khi setup xong events + data observation
+- Có thể active event
+- Có thể gán giá trị cho data
+```javascript
+  new Vue({
+    data: {
+      count: 10
+    },
+    created: function () {
+      // `this` points to the view model instance
+      console.log('count is: ' + this.count)
+    }
+  })
+  // count is: 10
+```
+Nhưng component vẫn chưa được mount nên không thể access vào template được
 
-Tại sao khi bind v-for thường phải mapping key
+*Note:* Sẽ không thể access vào DOM hoặc target mounting element (this.$el) vì chưa gán component với DOM
+## 2. Mounting (DOM Insertion)
+Lần render đầu tiên
+- Gán component vào DOM
+1. `beforeMount`
+Trước khi first render
+```javascript
+  new Vue({
+    beforeMount: function () {
+      // `this` points to the view model instance
+      console.log(`this.$el is yet to be created`);
+    }
+  })
+```
+2. `mounted`
+Sau khi first render
+-  full access to the reactive component, templates, and rendered DOM (via. this.$el)
+```javascript
+  <div id="app">
+      <p>I’m text inside the component.</p>
+  </div>
+  new Vue({
+    el: ‘#app’,
+    mounted: function() {
+      console.log(this.$el.textContent); // I'm text inside the component.
+    }
+  })
+```
+## 3. Updating (Diff & Re-render)
+Data changes dẫn đến update component => re-render
+1. `beforeUpdate`
+- runs after data changes on your component, 
+- right before the DOM is patched and re-rendered
+```javascript
+  <div id="app">
+    <p>{{counter}}</p>
+  </div>
+  ...// rest of the code
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        counter: 0
+      }
+    },
+      created: function() {
+      setInterval(() => {
+        this.counter++
+      }, 1000)
+    },
+
+    beforeUpdate: function() {
+      console.log(this.counter) // Logs the counter value every second, before the DOM updates.
+    }
+  })
+```
+2. `updated`
+- after data changes on your component and the DOM re-renders.
+```javascript
+  <div id="app">
+    <p ref="dom">{{counter}}</p>
+  </div>
+  ...//
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        counter: 0
+      }
+    },
+      created: function() {
+      setInterval(() => {
+        this.counter++
+      }, 1000)
+    },
+    updated: function() {
+      console.log(+this.$refs['dom'].textContent === this.counter) // Logs true every second
+    }
+  })
+```
+
+## 4. Destruction (Teardown)
+Perform actions when your component is destroyed
+- Cleanup
+- Analytics sending
+1. `beforeDestroy`
+- fired right before teardown
+- cleanup events or reactive subscriptions
+```javascript
+  new Vue ({
+    data() {
+      return {
+        message: 'Welcome VueJS developers'
+      }
+    },
+
+    beforeDestroy: function() {
+      this.message = null
+      delete this.message
+    }
+  })
+```
+
+2. `destroyed`
+after your component has been destroyed
+- its directives have been unbound
+- its event listeners have been removed
+```javascript
+  new Vue ({
+    destroyed: function() {
+      console.log(this) // Nothing to show here
+    }
+  })
+```
+
+## Khác biệt giữa v-if và v-show
+1. Render
+- v-if chỉ render element khi thỏa mãn condition
+  - Xóa element khỏi DOM khi không thỏa mãn
+  - Component created khi `v-if = true`
+  - Component destroyed khi khi `v-if = false`
+- v-show chỉ dùng CSS để ẩn element
+  - Element vẫn tồn tại trong DOM
+1. v-else chỉ dùng cho v-if
+  - else-if cũng chỉ cho v-if
+1. 
+1. v-if supports <template> tab but v-show doesn't support.
+
+## Tại sao khi bind v-for thường phải mapping key
 - Để khi 1 item trong array update thì sẽ tìm và update view tương ứng mà không phải update cả array
+
+## What is the purpose of v-for directive
+loop through items in an array or object
+
+1. **Array usage:**
+```javascript
+<ul id="list">
+  <li v-for="(item, index) in items">
+    {{ index }} - {{ item.message }}
+  </li>
+</ul>
+
+var vm = new Vue({
+  el: '#list',
+  data: {
+    items: [
+      { message: 'John' },
+      { message: 'Locke' }
+    ]
+  }
+})
+```
+You can also use `of` as the delimiter instead of `in`, similar to javascript iterators.
+
+2. **Object usage:**
+```javascript
+<div id="object">
+  <div v-for="(value, key, index) of user">
+    {{ index }}. {{ key }}: {{ value }}
+  </div>
+</div>
+
+var vm = new Vue({
+  el: '#object',
+  data: {
+    user: {
+      firstName: 'John',
+      lastName: 'Locke',
+      age: 30
+    }
+  }
+})
+```
+
+## Why should not use if and for directives together on the same element?
+It is recommended not to use v-if on the same element as v-for. 
+- Because v-for directive has a higher priority than v-if.
+```javascript
+  <ul>
+    <li
+      v-for="user in users"
+      v-if="user.isActive"
+      :key="user.id"
+    >
+      {{ user.name }}
+    <li>
+  </ul>
+```
+
+```javascript
+  <ul v-if="shouldShowUsers">
+    <li
+      v-for="user in users"
+      :key="user.id"
+    >
+      {{ user.name }}
+    <li>
+  </ul>
+```
+
+## When component needs a single root element?
+In VueJS 2.x, every component must have a single root element **when template has more than one element**. In this case, you need to wrap the elements with a parent element.
+```vue
+<template>
+  <div class="todo-item">
+      <h2>{{ title }}</h2>
+      <div v-html="content"></div>
+  </div>
+</template>
+```
+Otherwise there will an error throwing, saying that "Component template should contain exactly one root element...".
+
+Whereas in 3.x, components now can have multiple root nodes. This way of adding multiple root nodes is called as fragments.
+```vue
+<template>
+    <h2>{{ title }}</h2>
+    <div v-html="content"></div>
+</template>
+```
+
+## What is the data flow followed by props?
+`props` là 1 way down
+- Không thể gán giá trị cho props
+
+## What is vue router and their features?
+Vue Router is a official routing library for single-page applications designed for use with the Vue.js framework.
+
+Below are their features,
+1. Nested route/view mapping
+2. Modular, component-based router configuration
+3. Route params, query, wildcards
+4. View transition effects powered by Vue.js' transition system
+5. Fine-grained navigation control
+6. Links with automatic active CSS classes
+7. HTML5 history mode or hash mode, with auto-fallback in IE9
+8. Restore scroll position when going back in history mode
