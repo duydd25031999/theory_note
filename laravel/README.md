@@ -189,8 +189,17 @@ class ProfileController extends Controller
 # Middleware
 Middleware là những process chạy trước khi requrest được xử lý.
 
-# Model files
-HasRelationships
+# Model
+## Đính kèm
+### trait Illuminate\Database\Eloquent\Factories\HasFactory;
+Có thể tạo Factory cho model này
+
+### trait Illuminate\Notifications\Notifiable;
+
+### class Illuminate\Foundation\Auth\User
+Hay được đặt tên thành Authenticatable
+
+## HasRelationships
 - belongsTo
     - Ứng với 1 đầu của quan hệ 1-1 or đầu many trong quan hệ 1-many.
 ```$this->belongsTo(User::class);```
