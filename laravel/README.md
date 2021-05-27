@@ -241,7 +241,7 @@ query()
 ```$argument = $request->query('name');```
     
 all()
-- Get all input & query
+- Get all input & querys
 - Return array
 ```$array = $request->all();```
     
@@ -260,12 +260,34 @@ hasAny()
         - Là những file để fake data cho model trong database.
         - Từ đó có thể tạo data có sẵn để mockup, test, …
 
-# Laravel-mix
+# .blade.php
+## Laravel-mix
+laravel-mix là 1 package webpack compile rồi cho output ra folder mà mình chỉ định
+- Thường thì sẽ compile từ folder "resource" ra folder "public" 
+
 `npm run dev`
 - Build ra 1 bản js + css trong folder `public`
 
 webpack.mix.js
 - file để webpack có thể merge js + css của folder `public` + `resoureces`
+
+## Directives
+`@auth`
+- tương đương với `@if (auth()->user())`
+
+`@guest`
+- tương đương với `@if (!auth()->user())`
+
+# Authenticate
+## cookie
+laravel_session
+
+XSRF-Token
+
+remember_web_{id}
+
+## auth()
+### atempt()
 
 # Question
 Event và Listener là gì? Dùng khi nào? Tại sao dùng? Ví dụ?
