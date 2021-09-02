@@ -1,4 +1,44 @@
-<link rel="stylesheet" href="../../css/style.css">
+<style>
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+.text-special {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: underline;
+    margin-left: 0.5rem;
+}
+
+.text-underline {
+    padding-bottom: 0.25rem;
+    border-bottom: solid 1px;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip::before {
+    display: none;
+    content: attr(title);
+    background-color: #12261e;
+    justify-content: center;
+    border-radius: 3px;
+    width: max-content;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.tooltip:hover::before {
+    display: block;
+}
+
+</style>
 
 # Things to avoid when asking questions
 
