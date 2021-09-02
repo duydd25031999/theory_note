@@ -104,7 +104,7 @@ h1, h2, h3, h4, h5, h6 {
 - Đây là tiêu chí đánh giá chất lượng của 1 câu hỏi
 - 1 câu hỏi chứa >= 1 yếu tố SMART
 - Không phải lúc nào câu hỏi cũng dài + thừa dữ kiện
-1. <span class="text-special">S</span>pecific
+1. <b class="text-special">S</b>pecific
     - Specific questions 
         - simple
         - significant 
@@ -129,14 +129,14 @@ h1, h2, h3, h4, h5, h6 {
     - Hỏi chi tiết + liên quan tới số liệu
         > What percentage of kids achieve the recommended 60 minutes of physical activity at least five days a week?
 
-1. <span class="text-special">M</span>easurable
+1. <b class="text-special">M</b>easurable
     - Measurable questions = quantified (đo lường) + assessed (đánh giá)
 
     ```
     - Will the question give you answers that you can measure?
     ```
 
-1. <span class="text-special">A</span>ction-oriented
+1. <b class="text-special">A</b>ction-oriented
     - Action-oriented questions encourage change
         - Khuyến khích thay đổi
     - Các câu trả lời có cung cấp thông tin giúp đề ra kế hoạch hành động
@@ -148,7 +148,7 @@ h1, h2, h3, h4, h5, h6 {
 
     - What ..., which ... mà hành động ... ảnh hưởng ?
 
-1. <span class="text-special">R</span>elevant: liên quan, thích hợp
+1. <b class="text-special">R</b>elevant: liên quan, thích hợp
     - Relevant questions matter, are important and have significance to the problem you're trying to solve?
 
     - Hỏi về những thứ liên quan tới solution
@@ -159,7 +159,7 @@ h1, h2, h3, h4, h5, h6 {
       (Có phải CÂU HỎI về vấn đề cụ thể mà bạn đang cố gắng giải quyết không?)
     ```
 
-1. <span class="text-special">T</span>ime-bound
+1. <b class="text-special">T</b>ime-bound
     - Time-bound questions specify the time to be studied
     - Hỏi về khoảng thời gian thu thập, xử lý data
     - Càng chỉ rõ thời điểm, càng rút ngắn khoảng thời gian ➔ càng có ích
@@ -175,7 +175,7 @@ h1, h2, h3, h4, h5, h6 {
 - Sử dụng CÂU HỎI MẪU ĐỂ SINH RA CÂU HỎI THỰC TẾ
 - 1 câu hỏi có thể có >= 2 loại 
 
-1. <span class="text-special">Objectives</span>: Mục tiêu
+1. <b class="text-special">Objectives</ins>: Mục tiêu
     - Loại câu hỏi để khám phá mục tiêu cụ thể của project
 
     ```
@@ -184,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
     - What, if any, questions are expected to be answered by this deep dive?
     ```
 
-1. <span class="text-special">Audience</span>: Thính giả
+1. <b class="text-special">Audience</ins>: Thính giả
     - Loại câu hỏi về những người liên quan tới project
     
     ```
@@ -193,7 +193,7 @@ h1, h2, h3, h4, h5, h6 {
     - Who is the audience for the presentation?
     ```
 
-1. <span class="text-special">Time</span>: Thời gian
+1. <b class="text-special">Time</ins>: Thời gian
     - Loại câu hỏi về thời gian, thời điểm của project
 
     ```
@@ -201,14 +201,14 @@ h1, h2, h3, h4, h5, h6 {
     - By what date does this need to be done?
     ```
 
-1. <span class="text-special">Resources</span>: Tài nguyên
+1. <b class="text-special">Resources</ins>: Tài nguyên
     - Loại câu hỏi về tài nguyên cần có trong project
 
     ```
     - What resources are available to accomplish the deep dive's goals?
     ```
 
-1. <span class="text-special">Security</span>: Bảo mật
+1. <b class="text-special">Security</ins>: Bảo mật
     - Loại câu hỏi về tính bảo mật trong project
 
      ```
