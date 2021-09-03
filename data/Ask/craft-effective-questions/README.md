@@ -8,11 +8,13 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     text-decoration: underline;
     margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .text-underline {
     padding-bottom: 0.25rem;
     border-bottom: solid 1px;
+    text-decoration: none;
 }
 
 .tooltip {
@@ -175,7 +177,7 @@ h1, h2, h3, h4, h5, h6 {
 - Sử dụng CÂU HỎI MẪU ĐỂ SINH RA CÂU HỎI THỰC TẾ
 - 1 câu hỏi có thể có >= 2 loại 
 
-1. <b class="text-special">Objectives</ins>: Mục tiêu
+1. <b class="text-special">Objectives</b>: Mục tiêu
     - Loại câu hỏi để khám phá mục tiêu cụ thể của project
 
     ```
@@ -184,7 +186,7 @@ h1, h2, h3, h4, h5, h6 {
     - What, if any, questions are expected to be answered by this deep dive?
     ```
 
-1. <b class="text-special">Audience</ins>: Thính giả
+1. <b class="text-special">Audience</b>: Thính giả
     - Loại câu hỏi về những người liên quan tới project
     
     ```
@@ -193,7 +195,7 @@ h1, h2, h3, h4, h5, h6 {
     - Who is the audience for the presentation?
     ```
 
-1. <b class="text-special">Time</ins>: Thời gian
+1. <b class="text-special">Time</b>: Thời gian
     - Loại câu hỏi về thời gian, thời điểm của project
 
     ```
@@ -201,14 +203,14 @@ h1, h2, h3, h4, h5, h6 {
     - By what date does this need to be done?
     ```
 
-1. <b class="text-special">Resources</ins>: Tài nguyên
+1. <b class="text-special">Resources</b>: Tài nguyên
     - Loại câu hỏi về tài nguyên cần có trong project
 
     ```
     - What resources are available to accomplish the deep dive's goals?
     ```
 
-1. <b class="text-special">Security</ins>: Bảo mật
+1. <b class="text-special">Security</b>: Bảo mật
     - Loại câu hỏi về tính bảo mật trong project
 
      ```
@@ -269,7 +271,7 @@ h1, h2, h3, h4, h5, h6 {
 
 ### Response 
 
-<span class="text-underline">Question 1</span>:
+<ins class="text-underline">Question 1</ins>:
 - When is the project due?
     - Type: Time
     - SMART: <b class="tooltip" title="Specific">S</b> + <b class="tooltip" title="Measuable">M</b> + <b class="tooltip" title="Action-oriented">A</b>
@@ -309,10 +311,71 @@ h1, h2, h3, h4, h5, h6 {
 
 ### Plan for the conversation
 
+Goal is to plan for a successful conversation.
+1. Prioritize your questions: Ưu tiên các câu hỏi của bạn
+    - Prepare to ask the most important and interesting questions first.
+1. Make your time count: Làm cho thời gian của bạn có giá trị
+    - Stay on subject during the conversation.
+1. Clarify your understanding: Làm rõ sự hiểu biết của bạn
+    - To avoid confusion, build in some time to summarize answers to make sure you understood them correctly. 
+    - This will go a long way in helping you avoid mistakes. 
+    - For example, in a conversation with a teacher, you might check your understanding with a statement like, “Just to double check that I understand what you’re saying correctly, you currently use test scores in the following ways…”
+
+### Create questions
+
+- Works in retail
+
+    - <b class="text-underline">Specific</b>: Do you currently use data to drive decisions in your business? If so, what kind(s) of data do you collect, and how do you use it?
+
+    - <b class="text-underline">Measurable</b>: Do you know what percentage of sales is from your top-selling products?
+
+    - <b class="text-underline">Action-oriented</b>: Are there business decisions or changes that you would make if you had the right information? For example, if you had information about how umbrella sales change with the weather, how would you use it?
+
+    - <b class="text-underline">Relevant</b>: How often do you review data from your business?
+
+    - <b class="text-underline">Time-bound</b>: Can you describe how data helped you make good decisions for your store(s) this past year?
+
+- Conversation with a teacher
+
+    - <b class="text-underline">Specific</b>: What kind of data do you use to build your lessons?
+    
+    - <b class="text-underline">Measurable</b>: How well do student benchmark test scores correlate with their grades?
+
+    - <b class="text-underline">Action-oriented</b>: Do you share your data with other teachers to improve lessons?
+
+    - <b class="text-underline">Relevant</b>: Have you shared grading data with an entire class? If so, do students seem to be more or less motivated, or about the same?
+
+    - <b class="text-underline">Time-bound</b>: In the last five years, how many times did you review data from previous academic years?
+
+- Conversation with a small business owner of an ice cream shop
+
+   - <b class="text-underline">Specific</b>: What data do you use to help with purchasing and inventory?
+
+  - <b class="text-underline">Measurable</b>: Can you order (rank) these factors from most to least influential on sales: price, flavor, and time of year (season)?
+
+    - <b class="text-underline">Action-oriented</b>: Is there a single factor you need more data on so you can potentially increase sales?
+
+    - <b class="text-underline">Relevant</b>: How do you advertise to or communicate with customers?
+
+    - <b class="text-underline">Time-bound</b>: What does your year-over-year sales growth look like for the last three years?
+
 ### Reflection
 
-- What SMART questions did you ask? How did these questions tie into the field of the person you chatted with? 
+1. What SMART questions did you ask?
 
-- What insights did you discover during your conversation? 
+1. How did these questions tie into the field of the person you chatted with? 
 
-- How did the SMART framework help you arrive at your conclusions?
+1. What insights did you discover during your conversation? 
+
+1. How did the SMART framework help you arrive at your conclusions?
+
+### Response
+
+<ins class="text-underline">Question 2</ins>:
+- Those questions about sale data of the shop.
+
+<ins class="text-underline">Question 3</ins>:
+- What make shop increase sales.
+
+<ins class="text-underline">Question 4</ins>:
+- SMART framework help specific major factors need to explore data.
