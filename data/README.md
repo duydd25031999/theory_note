@@ -3,4 +3,12 @@
 ## WEEK 1
 
 1. [Solve problems with data](Ask/solve-problems-with-data/README.md)
+
 1. [Craft effective questions](Ask/craft-effective-questions/README.md)
+
+## WEEK 2
+1. [Understand the power of data](Ask/understand-the-power-of-data/README.md)
+
+1. [Follow the evidence](Ask/follow-the-evidence/README.md)
+
+1. [Connecting the data dots](Ask/connecting-the-data-dots/README.md)
