@@ -7,8 +7,15 @@
 1. [Craft effective questions](Ask/craft-effective-questions/README.md)
 
 ## WEEK 2
+
 1. [Understand the power of data](Ask/understand-the-power-of-data/README.md)
 
 1. [Follow the evidence](Ask/follow-the-evidence/README.md)
 
 1. [Connecting the data dots](Ask/connecting-the-data-dots/README.md)
+
+## WEEK 3
+
+1. [Working with spreadsheets](Ask/working-with-spreadsheets/README.md)
+
+1. [Save time with structured thinking](Ask/save-time-with-structured-thinking/README.md)
