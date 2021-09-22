@@ -19,3 +19,15 @@
 1. [Working with spreadsheets](Ask/working-with-spreadsheets/README.md)
 
 1. [Save time with structured thinking](Ask/save-time-with-structured-thinking/README.md)
+
+## WEEK 4
+
+1. [Balance team and stakeholder needs](Ask/balance-team-and-stakeholder-needs/README.md)
+
+1. [Communication is key](Ask/communication-is-key/README.md)
+
+# Prepare
+
+## Week 1
+
+1. [Introduction to data exploration](Prepare/introduction-to-data-exploration/README.md)
