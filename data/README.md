@@ -31,3 +31,8 @@
 ## Week 1
 
 1. [Introduction to data exploration](Prepare/introduction-to-data-exploration/README.md)
+
+
+## Week 2
+
+1. [Unbiased and objective data](Prepare/unbiased-and-objective-data/README.md)
