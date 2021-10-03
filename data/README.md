@@ -36,3 +36,7 @@
 ## Week 2
 
 1. [Unbiased and objective data](Prepare/unbiased-and-objective-data/README.md)
+
+## Week 3
+
+1. [Working with databases](Prepare/working-with-databases/README.md)
