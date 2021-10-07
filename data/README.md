@@ -40,3 +40,9 @@
 ## Week 3
 
 1. [Working with databases](Prepare/working-with-databases/README.md)
+
+# Process
+
+## Week 1
+
+1. [Data integrity and analytics objectives](Process/data-integrity-and-analytics-objectives/README.md)
