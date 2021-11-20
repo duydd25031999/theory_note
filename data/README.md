@@ -46,3 +46,7 @@
 ## Week 1
 
 1. [Data integrity and analytics objectives](Process/data-integrity-and-analytics-objectives/README.md)
+
+## Week 2
+
+1. [Process Data from Dirty to Clean](Process/process-data-from-dirty-to-clean/README.md)

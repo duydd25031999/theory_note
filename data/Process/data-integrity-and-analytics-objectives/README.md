@@ -18,6 +18,27 @@ Other threads to data integrity
 - Hacking
 - System failures
 
+## Accuracy (chính xác)
+
+The degree of conformity of a measure to a standard or a true value
+- Mức độ phù hợp của một thước đo với tiêu chuẩn hoặc giá trị thực
+
+## Completeness (toàn vẹn)
+
+The degree to which all required measures are known
+- Mức độ mà tất cả các biện pháp bắt buộc được biết đến
+
+## Consistency (nhất quán)
+
+The degree to which a set of measures is equivalent across systems
+-Mức độ mà một tập hợp các thước đo là tương đương giữa các hệ thống
+
+## Trustworthiness (đáng tin cậy)
+
+Validity (hợp lệ)
+- The concept of using data integrity principles to ensure measures conform to defined business rules or constraints
+- Khái niệm sử dụng các nguyên tắc toàn vẹn dữ liệu để đảm bảo các biện pháp tuân theo các quy tắc hoặc ràng buộc kinh doanh đã xác định
+
 ## Data constraints: ràng buộc về data
 
 Để đảm bảo tính toàn vẹn, cần có ràng buộc trong quá trình clean data
